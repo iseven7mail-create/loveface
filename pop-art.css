@@ -1,0 +1,239 @@
+/* The approved cards' pop-art vocabulary: purple, cyan, yellow, ink and paper. */
+:root {
+  --ink: #17121c;
+  --purple: #7020d5;
+  --deep: #4a079c;
+  --cream: #ffffff;
+  --muted: #514857;
+  --line: #17121c;
+  --yellow: #fff02b;
+  --aqua: #29e8e9;
+  --lavender: #eee0ff;
+  background: var(--purple);
+}
+body {
+  background-color: var(--purple);
+  background-image: radial-gradient(#28113880 1px, transparent 1.5px);
+  background-size: 7px 7px;
+}
+.topbar {
+  max-width: none;
+  padding: 20px max(32px, calc((100vw - 1168px) / 2));
+  background: #fff;
+  border-bottom: 4px solid var(--ink);
+}
+.brand {font-weight: 900; font-size: 18px; letter-spacing: .025em;}
+.brand-icon {border: 2px solid var(--ink); border-radius: 3px; box-shadow: 3px 3px 0 var(--ink);}
+.edition {background: var(--yellow); border: 2px solid var(--ink); padding: 9px 14px; color: var(--ink); font-weight: 800; transform: rotate(2deg); box-shadow: 3px 3px 0 var(--ink);}
+.intro {gap: 52px; padding-top: 38px; padding-bottom: 46px;}
+.intro-copy > .eyebrow {
+  display: inline-flex; background: var(--aqua); color: var(--ink); padding: 8px 12px;
+  border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--ink); font-size: 12px;
+  transform: rotate(-2deg); letter-spacing: .08em;
+}
+.eyebrow i {background: var(--ink);}
+.intro h1 {
+  color: #fff; font-size: clamp(44px, 4.9vw, 64px); font-weight: 900;
+  font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+  font-synthesis: weight;
+  -webkit-text-stroke: 1px currentColor; paint-order: stroke fill;
+  text-shadow: 4px 4px 0 var(--ink); margin: 23px 0 21px;
+}
+.highlight {color: var(--yellow);}
+.highlight:after {height: 10px; background: var(--aqua); bottom: -3px; border: 2px solid var(--ink); transform: rotate(-4deg);}
+.spark {color: var(--yellow); -webkit-text-stroke: 1px var(--ink); text-shadow: 2px 2px 0 var(--ink); right: -48px;}
+.lead {
+  display: inline-block; position: relative; background: #fff; border: 3px solid var(--ink);
+  border-radius: 50%; padding: 16px 33px; font-weight: 800; font-size: 18px;
+  text-align: center; line-height: 1.6; margin: 4px 0 18px; box-shadow: 4px 4px 0 var(--ink);
+}
+.lead:after {content: ""; position: absolute; left: 41px; bottom: -12px; width: 19px; height: 19px; background: #fff; border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); transform: skewY(-28deg) rotate(35deg);}
+.intro-description {color: #fff; font-size: 14px; font-weight: 600; line-height: 1.8; margin: 8px 0 23px;}
+.selection-box {background: #fff; border: 3px solid var(--ink); padding: 23px; box-shadow: 8px 8px 0 var(--ink); max-width: 530px;}
+legend {font-size: 15px; font-weight: 900;}
+.step-number {background: var(--purple); color: #fff; border: 2px solid var(--ink); width: 27px; height: 27px; font-weight: 900;}
+fieldset:disabled {opacity: .58;}
+.choice {border: 2px solid var(--ink); border-radius: 3px; box-shadow: 3px 3px 0 var(--ink); padding: 13px 12px;}
+.choice b {font-size: 16px; font-weight: 850;}
+.choice small {font-size: 10px; color: #514857;}
+.choice i {border: 2px solid var(--ink); margin-left: 8px;}
+.choice > span {flex: 1;}
+.choice:has(input:checked) {background: var(--yellow); border-color: var(--ink); box-shadow: 3px 3px 0 var(--purple);}
+.choice:has(input:checked) i {background: var(--purple); border-color: var(--purple);}
+.choice:has(input:hover):not(:has(input:disabled)) {background: #d8ffff;}
+.choice:has(input:checked):hover {background: var(--yellow);}
+.primary {background: var(--yellow); color: var(--ink); border: 3px solid var(--ink); border-radius: 3px; box-shadow: 5px 5px 0 var(--ink); font-weight: 900; min-height: 56px; font-size: 16px;}
+.primary:hover:enabled {background: var(--aqua); transform: translate(-1px,-1px);}
+.primary:active:enabled {transform: translate(3px,3px); box-shadow: 2px 2px 0 var(--ink);}
+.primary:disabled {opacity: 1; background: #ece8f0; color: #746d7b; border-color: #746d7b; box-shadow: 3px 3px 0 #b5aebd;}
+.selection-note {font-size: 12px;}
+.privacy {font-size: 10px; margin-top: 17px;}
+.hero-art {min-height: 680px;}
+.art-orbit {
+  top: 35px; left: -5%; width: 110%; height: 580px; aspect-ratio: auto;
+  background: repeating-conic-gradient(from 12deg at 48% 52%, var(--aqua) 0deg 20deg, var(--ink) 20deg 21deg, var(--yellow) 21deg 38deg, var(--ink) 38deg 39deg, var(--purple) 39deg 58deg, var(--ink) 58deg 60deg);
+  border-radius: 0; clip-path: polygon(5% 0, 90% 4%, 100% 90%, 9% 100%, 0 20%);
+}
+.art-orbit:after {content: ""; position: absolute; inset: 0; background: radial-gradient(#17121c 1px, transparent 1.5px); background-size: 6px 6px; opacity: .35;}
+.preview-card {border: 4px solid var(--ink); border-radius: 2px; box-shadow: 8px 9px 0 var(--ink);}
+.back-card {top: 33px; right: 3%; transform: rotate(9deg);}
+.front-card {top: 150px; left: 4%; transform: rotate(-9deg);}
+.art-star {color: var(--yellow); -webkit-text-stroke: 2px var(--ink); paint-order: stroke fill; text-shadow: 3px 3px 0 var(--ink); font-size: 76px;}
+.star-one {top: -7px; left: 3%;}
+.star-two {bottom: 20px; right: 7%; color: var(--aqua); font-size: 56px;}
+.art-sticker {right: -2%; top: 462px; padding: 23px; border: 3px solid var(--ink); background: #fff; box-shadow: 5px 5px 0 var(--ink); font-size: 14px; font-weight: 700;}
+.art-sticker strong {font-size: 17px; color: var(--purple); font-weight: 900;}
+.art-caption {bottom: 0; left: 4%; right: auto; background: var(--yellow); border: 2px solid var(--ink); padding: 9px 14px; color: var(--ink); font-size: 12px; font-weight: 800; transform: rotate(-2deg); box-shadow: 3px 3px 0 var(--ink);}
+.about-note {background: #fff; border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); padding: 22px 25px; margin: 12px 0 35px;}
+.about-note strong {font-weight: 900; font-size: 14px;}
+.about-note p {color: #514857; font-size: 12px;}
+.note-star {color: var(--purple);}
+footer {max-width: none; padding: 21px max(32px, calc((100vw - 1168px) / 2)); margin: 0; border-top: 4px solid var(--ink); background: var(--yellow); color: var(--ink); font-weight: 800; font-size: 12px;}
+.result-header {background: var(--yellow); border: 3px solid var(--ink); box-shadow: 7px 7px 0 var(--ink); padding: 22px 25px; margin-bottom: 34px;}
+.result-header .eyebrow {color: var(--purple); font-weight: 900;}
+.result-header h1 {font-weight: 950; font-size: 34px;}
+.result-header p {color: var(--ink); font-size: 13px;}
+.text-button,.secondary {background: #fff; border: 2px solid var(--ink); border-radius: 3px; box-shadow: 3px 3px 0 var(--ink); font-weight: 800; color: var(--ink);}
+.text-button:hover,.secondary:hover {background: var(--aqua);}
+.card-stage {border: 3px solid var(--ink); border-radius: 0; box-shadow: 7px 7px 0 var(--ink); background: repeating-conic-gradient(from 15deg at 50% 45%, var(--aqua) 0deg 24deg, var(--ink) 24deg 25deg, var(--yellow) 25deg 49deg, var(--ink) 49deg 50deg); padding: 22px 27px 19px;}
+.card-count,.zoom-hint {width: fit-content; margin-left: auto; margin-right: auto; padding: 6px 13px; color: #fff; background: var(--purple); border: 2px solid var(--ink); font-weight: 800; font-size: 12px;}
+.card-image-button {border: 4px solid var(--ink); border-radius: 2px; box-shadow: 5px 5px 0 var(--ink);}
+.card-source {margin-top: 23px; background: #fff; border: 3px solid var(--ink); padding: 20px 15px; box-shadow: 5px 5px 0 var(--ink);}
+.card-source h2 {background: var(--purple); color: #fff; margin: 10px -15px 15px; padding: 9px 10px; font-weight: 850;}
+.card-source p {font-size: 16px; font-weight: 700;}
+.affection-panel {background: var(--yellow); border: 3px solid var(--ink); border-radius: 0; box-shadow: 7px 7px 0 var(--ink);}
+.affection-panel .eyebrow {color: var(--purple); font-size: 13px; font-weight: 900; letter-spacing: .04em;}
+.affection-panel p {color: var(--ink);}
+.score {color: var(--purple);}
+.score strong {font-weight: 950; font-size: 64px; -webkit-text-stroke: 1px var(--ink); paint-order: stroke fill; text-shadow: 2px 2px 0 #fff;}
+.score-track {border: 2px solid var(--ink); background: #fff; height: 13px; border-radius: 0;}
+.score-track > span {background: var(--purple);}
+.affection-panel .score-disclaimer {font-size: 11px;}
+.reading,.practice {margin-top: 25px; padding: 24px; background: #fff; border: 3px solid var(--ink); box-shadow: 7px 7px 0 var(--ink);}
+.section-label {display: inline-block; border: 2px solid var(--ink); background: var(--purple); color: #fff; font-size: 11px; padding: 5px 9px; font-weight: 850; letter-spacing: .05em;}
+.practice .section-label {background: var(--aqua); color: var(--ink);}
+.reading h2,.practice h2 {font-size: 24px; font-weight: 900; margin-top: 15px;}
+.reading > p {font-size: 15px;}
+.emotion-box {background: #f3eaff; border: 2px solid var(--ink); padding: 13px 15px;}
+.emotion-box p {color: #514857; font-size: 13px;}
+.emotion-box span {font-size: 11px;}
+.practice-note {font-size: 13px;}
+.practice li {font-size: 15px;}
+.practice li:before {background: var(--yellow); color: var(--ink); border: 2px solid var(--ink); font-size: 11px; font-weight: 900;}
+.say-box {position: relative; border: 3px solid var(--ink); border-radius: 23px; background: #fff; box-shadow: 4px 4px 0 var(--purple); margin: 24px 0 13px;}
+.say-box:after {content: ""; position: absolute; bottom: -12px; left: 25px; width: 18px; height: 18px; border-bottom: 3px solid var(--ink); border-right: 3px solid var(--ink); background: #fff; transform: skewY(-25deg) rotate(35deg);}
+.say-box span {color: var(--purple); font-size: 11px; font-weight: 900;}
+.say-box p {font-weight: 700; font-size: 15px;}
+.boundary-note {color: var(--ink); background: var(--aqua); border: 2px solid var(--ink); padding: 12px 16px; margin: 25px 0 21px; font-size: 12px;}
+.result-actions {gap: 15px;}
+.result-actions .secondary {min-width: 115px;}
+dialog {border: 4px solid var(--ink); border-radius: 3px; background: var(--purple);}
+.dialog-toolbar {background: var(--yellow); border-bottom: 3px solid var(--ink);}
+.dialog-toolbar h2 {font-weight: 900;}
+.dialog-scroll {background: radial-gradient(#1a1029 1px, transparent 1px) 0 0 / 6px 6px;}
+button:focus-visible,a:focus-visible,summary:focus-visible {outline: 3px solid #138b95; outline-offset: 5px;}
+.site-footer {display: block; padding-top: 25px; padding-bottom: 32px;}
+.footer-caption {display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 11px;}
+.footer-heading {font-size: 23px; font-weight: 900; margin: 25px 0 17px; letter-spacing: .02em;}
+.official-links {display: grid; grid-template-columns: 1fr 1fr; gap: 18px;}
+.official-link {display: flex; align-items: center; gap: 15px; padding: 18px; border: 3px solid var(--ink); background: #fff; color: var(--ink); box-shadow: 5px 5px 0 var(--ink); text-decoration: none; transition: transform .18s, background .18s; min-width: 0;}
+.official-link:hover {background: #e3ffff; transform: translate(-1px,-1px);}
+.official-link:active {transform: translate(3px,3px); box-shadow: 2px 2px 0 var(--ink);}
+.official-link-icon {display: grid; place-items: center; flex: 0 0 49px; height: 46px; border: 2px solid var(--ink); background: #06c755; color: var(--ink); font-size: 11px; font-weight: 950; letter-spacing: 0;}
+.website-link .official-link-icon {background: var(--purple); color: #fff;}
+.official-link-copy {min-width: 0;}
+.official-link-copy strong {display: block; font-size: 17px; font-weight: 900; line-height: 1.5;}
+.official-link-copy small {display: block; color: var(--muted); font-size: 12px; font-weight: 600; margin-top: 4px;}
+.official-link-arrow {font-size: 27px; margin-left: auto;}
+@media (max-width: 760px) {
+  .footer-heading {font-size: 21px; margin-top: 23px;}
+  .official-links {grid-template-columns: 1fr; gap: 15px;}
+  .official-link {padding: 14px 12px; gap: 12px;}
+  .official-link-copy strong {font-size: 15px;}
+  .official-link-copy small {font-size: 11px;}
+  .official-link-icon {flex-basis: 43px; height: 43px;}
+  .official-link-arrow {font-size: 23px;}
+}
+@media (max-width: 1000px) {
+  .intro {gap: 30px;}
+  .selection-box {padding: 19px;}
+  .choice {padding: 12px 9px;}
+  .choice small {font-size: 9px;}
+  .hero-art {min-height: 630px;}
+  .art-orbit {height: 530px;}
+  .art-sticker {top: 410px; padding: 18px; font-size: 12px;}
+  .art-sticker strong {font-size: 15px;}
+  .art-caption {font-size: 10px;}
+}
+@media (min-width: 761px) and (max-width: 880px) {
+  .intro h1 {font-size: 43px;}
+  .spark {right: -35px; font-size: .55em;}
+  .choices {gap: 8px;}
+  .choice small {max-width: 88px;}
+  .primary {padding: 13px; font-size: 14px;}
+}
+@media (max-width: 760px) {
+  .topbar {padding: 17px 20px; gap: 15px;}
+  .brand {font-size: 13px;}
+  .edition {font-size: 9px; padding: 7px 9px; letter-spacing: 0;}
+  main {padding: 0 20px;}
+  .intro {gap: 0; padding-top: 30px; padding-bottom: 20px;}
+  .intro h1 {font-size: 46px; line-height: 1.3; text-shadow: 3px 3px 0 var(--ink);}
+  .intro-copy > .eyebrow {font-size: 11px;}
+  .lead {font-size: 16px; padding: 14px 25px;}
+  .intro-description {font-size: 13px;}
+  .selection-box {padding: 18px 15px; box-shadow: 5px 5px 0 var(--ink);}
+  legend {font-size: 14px;}
+  .step-number {width: 24px; height: 24px;}
+  .choice {padding: 12px 9px;}
+  .choice b {font-size: 15px;}
+  .choice small {font-size: 10px; line-height: 1.6;}
+  .choice i {width: 15px; height: 15px; margin-left: 5px;}
+  .primary {padding: 13px 14px; font-size: 15px; gap: 10px;}
+  .privacy {font-size: 10px;}
+  .hero-art {min-height: 0; height: 465px; margin-top: 38px;}
+  .art-orbit {top: 0; left: 0; width: 100%; height: 405px;}
+  .back-card {top: 25px; right: 8%; width: 47%;}
+  .front-card {top: 78px; left: 8%; width: 49%;}
+  .star-one {top: 0; left: 0; font-size: 48px;}
+  .star-two {bottom: 38px; right: 5%; font-size: 40px;}
+  .art-sticker {top: 278px; right: 1%; padding: 16px; font-size: 11px;}
+  .art-sticker strong {font-size: 13px;}
+  .art-caption {bottom: 0; left: 4%; font-size: 11px; padding: 8px 10px;}
+  .about-note {padding: 18px 15px; margin-bottom: 27px; gap: 12px; box-shadow: 4px 4px 0 var(--ink);}
+  .about-note p {font-size: 11px;}
+  .about-note strong {font-size: 12px;}
+  footer {padding: 19px 20px; font-size: 10px;}
+  .result-header {padding: 18px 16px; box-shadow: 5px 5px 0 var(--ink);}
+  .result-header h1 {font-size: 27px; margin-top: 43px;}
+  .result-header p {font-size: 12px;}
+  .result-header .text-button {top: 9px; right: 10px; padding: 8px; font-size: 11px;}
+  .card-stage {padding: 18px 22px; box-shadow: 5px 5px 0 var(--ink);}
+  .card-count,.zoom-hint {font-size: 11px;}
+  .card-source {margin-bottom: 25px;}
+  .affection-panel {padding: 19px 17px; gap: 5px 12px;}
+  .affection-panel .eyebrow {font-size: 12px;}
+  .score strong {font-size: 58px;}
+  .reading,.practice {padding: 20px 17px; box-shadow: 5px 5px 0 var(--ink);}
+  .reading h2,.practice h2 {font-size: 22px;}
+  .result-actions .secondary {min-width: 105px; padding: 12px;}
+  .say-box {padding: 16px;}
+}
+@media (max-width: 360px) {
+  main {padding: 0 16px;}
+  .intro h1 {font-size: 40px;}
+  .spark {right: -38px;}
+  .selection-box {padding: 17px 12px;}
+  .choices {gap: 8px;}
+  .choice {padding: 11px 7px;}
+  .choice small {font-size: 9px;}
+  .primary {font-size: 14px; padding: 12px;}
+  .hero-art {height: 415px;}
+  .art-orbit {height: 360px;}
+  .art-sticker {top: 240px; padding: 13px;}
+  .result-header h1 {font-size: 23px;}
+  .score strong {font-size: 51px;}
+  .affection-panel {padding: 17px 14px;}
+  .affection-panel .eyebrow {font-size: 11px;}
+  .reading,.practice {padding: 18px 14px;}
+}

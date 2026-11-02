@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#7020d5">
+  <meta name="description" content="抽一張愛情面相花精牌，從牌卡象徵探索關係裡的自己。38 種心情，一個溫柔靠近的練習。">
+  <title>你在對方心裡的樣貌｜愛情面相花精牌</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%235926b9'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='46' fill='%23fff178'%3E♡%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pop-art.css">
+  <script src="cards-data.js" defer></script>
+  <script src="advice.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="index.html" aria-label="回到遊戲首頁"><span class="brand-icon" aria-hidden="true">♡</span><span>愛情面相花精牌<small>LOVE, IN ANOTHER LIGHT</small></span></a><span class="edition">38 張牌・38 種心情</span></header>
+  <main id="main">
+    <section id="intro" class="intro" aria-labelledby="hero-title">
+      <div class="intro-copy"><span class="eyebrow"><i></i> 一場關於心動的小探索</span>
+        <h1 id="hero-title">你在對方<br>心裡的<span class="highlight">樣貌<span class="spark" aria-hidden="true">✳</span></span></h1>
+        <p class="lead">如果心情有一張臉，<br>此刻的你，會是什麼模樣？</p>
+        <p class="intro-description">在心裡想一個人，抽一張牌。<br>從牌卡裡的表情與心聲，找到更真誠靠近的方式。</p>
+        <div class="selection-box">
+          <form id="selection-form">
+            <fieldset><legend><span class="step-number">01</span> 選擇你的戀愛取向</legend><div class="choices">
+              <label class="choice"><input type="radio" name="orientation" value="same" required><span><b>同性戀</b><small>心裡的對方與你同性別</small></span><i aria-hidden="true"></i></label>
+              <label class="choice"><input type="radio" name="orientation" value="different" required><span><b>異性戀</b><small>心裡的對方與你不同性別</small></span><i aria-hidden="true"></i></label>
+            </div></fieldset>
+            <fieldset id="gender-fieldset" disabled><legend><span class="step-number">02</span> 選擇自己的性別</legend><div class="choices">
+              <label class="choice compact"><input type="radio" name="gender" value="female" required><span><b>女性</b><small>抽取女版牌卡</small></span><i aria-hidden="true"></i></label>
+              <label class="choice compact"><input type="radio" name="gender" value="male" required><span><b>男性</b><small>抽取男版牌卡</small></span><i aria-hidden="true"></i></label>
+            </div></fieldset>
+            <p class="selection-note" id="selection-note" aria-live="polite">先選擇取向，再選擇自己的性別。</p>
+            <button class="primary draw-button" id="draw-button" type="submit" disabled>下一步，抽出我的樣貌 <span aria-hidden="true">↗</span></button>
+          </form>
+          <p class="privacy"><span aria-hidden="true">◌</span> 不用登入・選擇僅用於這次遊戲，不儲存或上傳</p>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="已確認的男女版花精牌展示">
+        <div class="art-orbit" aria-hidden="true"></div><span class="art-star star-one" aria-hidden="true">✦</span><span class="art-star star-two" aria-hidden="true">✦</span>
+        <figure class="preview-card back-card"><img src="assets/male/34-water-violet.webp" width="952" height="1632" alt="男版水堇牌：我不是不在乎，只是不習慣什麼都說出來。"></figure>
+        <figure class="preview-card front-card"><img src="assets/female/01-agrimony.webp" width="952" height="1632" alt="女版龍芽草牌：沒事啦，我真的沒有不開心。"></figure>
+        <span class="art-sticker">心動之前<br><strong>先讀懂自己 ♡</strong></span><p class="art-caption">一張牌，一個看見自己的新角度。</p>
+      </div>
+    </section>
+    <section id="result" class="result" hidden aria-labelledby="result-title">
+      <div class="result-header"><div><span class="eyebrow">YOUR LOVE PORTRAIT</span><h1 id="result-title" tabindex="-1">你在對方心裡的樣貌</h1><p id="result-context"></p></div><button class="text-button" id="reset-top" type="button">← 重新選擇</button></div>
+      <div class="result-grid">
+        <div class="card-column"><div class="card-stage"><span class="card-count" id="card-number"></span><button id="zoom-card" class="card-image-button" type="button" aria-label="放大檢視抽到的牌卡"><img id="card-image" width="952" height="1632" alt=""></button><p class="zoom-hint">⌕ 點擊牌面，放大閱讀</p><p id="image-error" hidden role="alert">牌面載入失敗。請確認 assets 資料夾與遊戲放在一起，再重新抽牌。</p></div>
+          <div class="card-source"><span>本次抽到的花精牌</span><h2 id="card-title"></h2><p id="quote"></p><small>牌面原文依原卡保留；遊戲中的對方稱謂依你的選擇呈現。</small></div>
+        </div>
+        <div class="reading-column">
+          <div class="affection-panel"><div><span class="eyebrow">本次隨機好感度</span><p id="score-label"></p></div><div class="score"><strong id="score"></strong><span>%</span></div><div class="score-track" aria-hidden="true"><span id="score-fill"></span></div><p class="score-disclaimer">純粹隨機的遊戲數字，並非對方的真實感受，也不代表你的價值。</p></div>
+          <article class="reading"><span class="section-label">01 / 牌卡給你的映照</span><h2 id="reading-title"></h2><p id="reading-text"></p><div class="emotion-box"><span>這張牌的情緒線索</span><p id="emotion"></p></div>
+            <details><summary>看看牌面裡的象徵線索</summary><p class="symbol-note">以下沿用牌卡的創作設定，供自我覺察；不以真人五官判定性格。</p><dl id="symbols"></dl></details>
+          </article>
+          <article class="practice"><span class="section-label">02 / 讓好感有機會發生</span><h2>靠近一點，從小事開始。</h2><p class="practice-note">不是保證加分的公式，而是讓相處更舒服的練習。</p><ol id="actions"></ol><div class="say-box"><span>你可以試著這樣說</span><p id="say"></p></div></article>
+          <p class="boundary-note">♡ 真心需要雙向回應。若對方拒絕或需要空間，尊重界線，也照顧自己的感受。</p>
+          <div class="result-actions"><button id="redraw" class="primary" type="button">再抽一張 <span aria-hidden="true">↻</span></button><button id="reset" class="secondary" type="button">重新選擇</button></div>
+        </div>
+      </div>
+    </section>
+    <section class="about-note" aria-label="遊戲說明"><span class="note-star" aria-hidden="true">✳</span><p><strong>這是一面溫柔的鏡子，不是讀心術。</strong><br>牌卡與解讀是象徵性的趣味抽牌，不根據外貌判斷個性，也不預測感情結果。真實的心意，留給彼此的交流來認識。</p></section>
+    <noscript><p class="noscript">這個抽牌遊戲需要啟用 JavaScript 才能操作。</p></noscript>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-caption"><span>愛情面相花精牌</span><span>慢慢認識，也慢慢靠近。 ♡</span></div>
+    <h2 class="footer-heading">和少甫老師保持連結</h2>
+    <nav class="official-links" aria-label="少甫老師官方連結">
+      <a class="official-link line-link" href="https://line.me/R/ti/p/%40158vkyka" target="_blank" rel="noopener noreferrer" aria-label="少甫老師官方 LINE（另開新分頁）">
+        <span class="official-link-icon" aria-hidden="true">LINE</span>
+        <span class="official-link-copy"><strong>少甫老師官方 LINE</strong><small>@158vkyka</small></span>
+        <span class="official-link-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="official-link website-link" href="https://selfus.wordpress.com/" target="_blank" rel="noopener noreferrer" aria-label="少甫老師官方網站（另開新分頁）">
+        <span class="official-link-icon" aria-hidden="true">WWW</span>
+        <span class="official-link-copy"><strong>少甫老師官方網站</strong><small>少甫老師身心靈知識</small></span>
+        <span class="official-link-arrow" aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </footer>
+  <dialog id="card-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><h2 id="dialog-title">牌卡放大檢視</h2><button id="close-dialog" type="button" class="secondary">關閉 ✕</button></div><div class="dialog-scroll"><img id="large-card" width="952" height="1632" alt=""></div></dialog>
+</body>
+</html>
